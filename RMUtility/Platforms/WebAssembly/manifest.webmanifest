@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "RMUtility",
+  "display": "standalone",
+  "name": "RMUtility",
+  "short_name": "RMUtility",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

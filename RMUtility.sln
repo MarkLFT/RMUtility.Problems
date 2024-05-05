@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMUtility", "RMUtility\RMUtility.csproj", "{2A47B487-C5C4-4609-A049-D80E7189C407}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{38C799CA-ECB5-4D4A-997C-656216A52181}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMUtility.UITests", "RMUtility.UITests\RMUtility.UITests.csproj", "{FC1C239C-A961-4578-A8DB-E5B252AB1A4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMUtility.Tests", "RMUtility.Tests\RMUtility.Tests.csproj", "{9C062544-8A5A-48F5-895F-3D829FBA82E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D5152DE-ACE7-4503-920D-61173455EFD7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		nuget.config = nuget.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A47B487-C5C4-4609-A049-D80E7189C407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A47B487-C5C4-4609-A049-D80E7189C407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A47B487-C5C4-4609-A049-D80E7189C407}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2A47B487-C5C4-4609-A049-D80E7189C407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A47B487-C5C4-4609-A049-D80E7189C407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A47B487-C5C4-4609-A049-D80E7189C407}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FC1C239C-A961-4578-A8DB-E5B252AB1A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1C239C-A961-4578-A8DB-E5B252AB1A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1C239C-A961-4578-A8DB-E5B252AB1A4D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FC1C239C-A961-4578-A8DB-E5B252AB1A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1C239C-A961-4578-A8DB-E5B252AB1A4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1C239C-A961-4578-A8DB-E5B252AB1A4D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9C062544-8A5A-48F5-895F-3D829FBA82E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C062544-8A5A-48F5-895F-3D829FBA82E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C062544-8A5A-48F5-895F-3D829FBA82E7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9C062544-8A5A-48F5-895F-3D829FBA82E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C062544-8A5A-48F5-895F-3D829FBA82E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C062544-8A5A-48F5-895F-3D829FBA82E7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC1C239C-A961-4578-A8DB-E5B252AB1A4D} = {38C799CA-ECB5-4D4A-997C-656216A52181}
+		{9C062544-8A5A-48F5-895F-3D829FBA82E7} = {38C799CA-ECB5-4D4A-997C-656216A52181}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CDAA8B0-AB3D-44A9-B2BE-3E5905A7D925}
+	EndGlobalSection
+EndGlobal
