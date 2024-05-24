@@ -20,9 +20,11 @@ public partial record MainPageModel
 
     public IState<string> Name => State<string>.Value(this, () => string.Empty);
 
-    public async ValueTask Logout(CancellationToken token)
+    public ValueTask Logout(CancellationToken token)
     {
         //await _authentication.LogoutAsync(token);
+
+        return ValueTask.CompletedTask;
     }
 
     //private readonly IAuthenticationService _authentication;

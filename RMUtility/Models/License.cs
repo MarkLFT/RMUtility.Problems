@@ -4,39 +4,20 @@ using LicenseType = Standard.Licensing.LicenseType;
 
 namespace RMUtility.Business.Models;
 
-public partial class License
+public partial record License(Guid Serial, Customer Customer, DateTime ExpiresDate, ImmutableList<Feature> Features, LicenseType LicenseType, LicenseOptions Options, ProductType ProductType, string AllowedVersion)
 {
-    public License() { }
-
-    public License(Guid serial, Customer customer, DateTime expiresDate, List<Feature> features, LicenseType licenseType, LicenseOptions options, ProductType productType, string allowedVersion) : this()
-    {
-        Serial = serial;
-        Customer = customer;
-        ExpiresDate = expiresDate;
-        Features = features;
-        LicenseType = licenseType;
-        Options = options;
-        ProductType = productType;
-        AllowedVersion = allowedVersion;
-    }
-
-    public Guid Serial { get; private set; }
-    public Customer? Customer { get; private set; }
-    public DateTime ExpiresDate { get; private set; }
-    public List<Feature>? Features { get; private set; }
-    public LicenseType LicenseType { get; private set; }
-    public LicenseOptions? Options { get; private set; }
-    public ProductType ProductType { get; private set; }
-    public string? AllowedVersion { get; private set; }
-
-    public string Company => Customer!.CustomerName!;
-    public string Name => Customer!.Name!;
-    public string Email => Customer!.EmailAddress!;
+    public string Company => Customer?.CustomerName ?? string.Empty;
+    public string Name => Customer?.Name ?? string.Empty;
+    public string Email => Customer?.EmailAddress ?? string.Empty;
     public string ProductTypeName => GetProductTypeName(ProductType);
     public string LicenseTypeName => GetLicenseTypeName(LicenseType);
-    public void ExtendLicense(DateTime newExpiresDate)
+
+    private static readonly int _version = 0;
+    public int Version => _version + 1;
+
+    public License ExtendLicense(DateTime newExpiresDate)
     {
-        ExpiresDate = newExpiresDate;
+        return new License(Serial, Customer, newExpiresDate, Features, LicenseType, Options, ProductType, AllowedVersion);
     }
 
     public static License NewLicense()

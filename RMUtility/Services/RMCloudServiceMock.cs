@@ -1,9 +1,9 @@
 namespace RMUtility.Services;
 internal class RMCloudServiceMock(ISerializer serializer) : IRMCloudService
 {
-    private IEnumerable<RawRate> RateDetails => serializer.FromString<IEnumerable<RawRate>>(RMCloudServiceMockData.RateData)!;
+    #region Rates
 
-    private IEnumerable<RawLicense> LicenseDetails => serializer.FromString<IEnumerable<RawLicense>>(RMCloudServiceMockData.LicenseData)!;
+    private IEnumerable<RawRate> RateDetails => serializer.FromString<IEnumerable<RawRate>>(RMCloudServiceMockData.RateData)!;
 
     public Task<ImmutableList<Rate>> GetRates(string baseCurrency)
     {
@@ -13,6 +13,11 @@ internal class RMCloudServiceMock(ISerializer serializer) : IRMCloudService
 
         return Task.FromResult(rates);
     }
+
+    #endregion Rates
+
+    #region Licenses
+    private IEnumerable<RawLicense> LicenseDetails { get; set; } = serializer.FromString<IEnumerable<RawLicense>>(RMCloudServiceMockData.LicenseData)!;
 
     public Task<ImmutableList<License>> GetLicenses(string searchText)
     {
@@ -44,9 +49,22 @@ internal class RMCloudServiceMock(ISerializer serializer) : IRMCloudService
         throw new NotImplementedException();
     }
 
-    public Task<License> ExtendExpiryDate(License license, DateTime newExpiryDate)
+    //public Task<License> ExtendExpiryDate(License license, DateTime newExpiryDate)
+    //{
+    //    license.ExtendLicense(newExpiryDate);
+    //    return Task.FromResult(license);
+    //}
+
+    #endregion Licenses
+
+    #region Email
+
+    public Task<CheckEmailAddressResponse> CheckEmailAddress(string emailAddress)
     {
-        license.ExtendLicense(newExpiryDate);
-        return Task.FromResult(license);
+        var response = new CheckEmailAddressResponse(true, true, false, false, false, false, false, 0.9M);
+
+        return Task.FromResult(response);
     }
+
+    #endregion Email
 }

@@ -31,4 +31,11 @@ internal interface IRMCloud
     Task<ApiResponse<GetRatesResponse>> GetRates([Body] GetRates request);
 
     #endregion Rates Endpoints
+
+    #region Email Endpoints
+
+    [Post("/checkemailaddress")]
+    Task<ApiResponse<CheckEmailAddressResponse>> CheckEmailAddress([Body] CheckEmailAddress request);
+
+    #endregion
 }
