@@ -130,6 +130,7 @@ public partial class App : Application
             new ViewMap<CurrencyRates, CurrencyRatesModel>(),
             new ViewMap<Licenses, LicensesModel>(),
             new ViewMap<EmailChecker, EmailCheckerModel>(),
+            //new ViewMap<LicensePage, LicensePageModel>(Data: new DataMap<License>())//,
             new DataViewMap<LicensePage, LicensePageModel, License>()
         );
 
